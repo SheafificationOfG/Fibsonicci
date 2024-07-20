@@ -33,7 +33,7 @@ make FLAGS="-DPERF" one_$(algo)
 
 By default, the output will be in scientific notation (with an option to fully expand).
 However, since Fibonacci numbers are encoded in a dyadic base, the expansion in decimal is achieved with a very lazily-implemented $`O(n^2)`$ double-dabble, so can be very slow if the result has a large number of digits.
-If you really want to verify the correcntess of the output, then run
+If you really want to verify the correctness of the output, then run
 
 ```bash
 make clean-bin # or just ensure that ./bin/one_$(algo) doesn't exist
@@ -70,7 +70,7 @@ This project includes the following implementations:
 | [FFT](#fft) | $`O(n\log n)`$[^1] | $`2^8`$ |
 | [Binet formula](#binet-formula) | $`O(n\log n)`$[^1] | $`2^8`$ |
 
-[^1]: These algorithms eventually fail (due to exceeding floating-point precision) when $`n\gg0`$ (e.g., fails when $`n\geq2^{23}-1`$).
+[^1]: These algorithms eventually fail (due to exceeding floating-point precision) when `n` is sufficiently large (e.g., fails when `n >= 0x7f'ffff`).
 
 
 ## Naive
