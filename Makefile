@@ -58,7 +58,7 @@ all-data-long: $(IMPL_LONG:%=$(DATA_DIR)/%.dat)
 $(IMPL_LIMIT:%=run-%): run-%: $(BIN_DIR)/%
 	./$^
 
-$(IMPL_LIMIT:%=$(DATA_DIR)/%.dat): $(DATA_DIR)/%.dat: $(BIN_DIR)/%
+$(IMPL_LIMIT:%=$(DATA_DIR)/%.dat): $(DATA_DIR)/%.dat: $(BIN_DIR)/%.out
 	./$^ > $@
 
 

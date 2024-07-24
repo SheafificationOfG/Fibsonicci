@@ -18,8 +18,8 @@ to initialise the output folders before trying to build anything specific.
 To compute a specific Fibonacci number using one of the [given implementations](#algorithms), use
 
 ```bash
-make one_$(algo)
-./bin/one_$(algo)
+make bin/one_$(algo).O3.out
+./bin/one_$(algo).O3.out
 ```
 
 If you are only interested in the computation time, run
