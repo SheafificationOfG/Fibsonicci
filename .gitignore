@@ -1,0 +1,10 @@
+# dump folders
+bin/*
+data/*
+obj/*
+
+# generated files
+*.o
+*.out
+*.exe
+*.dat
