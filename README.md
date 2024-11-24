@@ -1,6 +1,9 @@
 # Fibsonicci
 
-Source code for all of the implementations in my video [One second to compute the largest Fibonacci number I can](https://youtu.be/KzT9I1d-LlQ).
+Source code for all of the implementations (and a bit more) in my video: [One second to compute the largest Fibonacci number I can](https://youtu.be/KzT9I1d-LlQ).
+
+[![One second to compute the largest Fibonacci number I can](https://img.youtube.com/vi/KzT9I1d-LlQ/0.jpg)](https://youtu.be/KzT9I1d-LlQ)
+
 The video is a hard prerequisite to coming here and making fun of my code.
 
 # Usage
@@ -58,24 +61,24 @@ make all-data
 Large numbers are encoded as base-$`2^L`$ unsigned integers (using `vector`s), where $`L`$ depends on the algorithm of choice.
 This project includes the following implementations:
 
-| Algorithm | Runtime | Digit size ($`2^L`$) |
-|:---------:|:-------:|:--------------------:|
-| [Naive](#naive) | $`\Omega(\exp(n))`$ | $`2^{64}`$ |
-| ["Linear"](#linear) | $`O(n^2)`$ | $`2^{64}`$ |
-| [Simple matrix multiplication](#simple-matrix-multiplication) | $`O(n^2)`$ | $`2^{32}`$ |
-| [Fast exponentiation](#fast-exponentiation) | $`O(n^2)`$ | $`2^{32}`$ |
-| [Strassen matrix multiplication](#strassen-matrix-multiplication) | $`O(n^2)`$ | $`2^{32}`$ |
-| [Karatsuba multiplication](#karatsuba-multiplication) | $`O(n^{1.585})`$ | $`2^{32}`$ |
-| [DFT](#dft) | $`O(n^2)`$[^1] | $`2^8`$ |
-| [FFT](#fft) | $`O(n\log n)`$[^1] | $`2^8`$ |
-| [Binet formula](#binet-formula) | $`O(n\log n)`$[^1] | $`2^8`$ |
+| Algorithm | Source (`impl/`) | Runtime | Digit size ($`2^L`$) |
+|:---------:|:----------------:|:-------:|:--------------------:|
+| [Naive](#naive) | `naive.cpp` | $`\Omega(\exp(n))`$ | $`2^{64}`$ |
+| ["Linear"](#linear) | `linear.cpp` | $`O(n^2)`$ | $`2^{64}`$ |
+| [Simple matrix multiplication](#simple-matrix-multiplication) | `matmul_simple.cpp` | $`O(n^2)`$ | $`2^{32}`$ |
+| [Fast exponentiation](#fast-exponentiation) | `matmul_fastexp` | $`O(n^2)`$ | $`2^{32}`$ |
+| [Strassen matrix multiplication](#strassen-matrix-multiplication) | `matmul_strassen.cpp` | $`O(n^2)`$ | $`2^{32}`$ |
+| [Karatsuba multiplication](#karatsuba-multiplication) | `matmul_karatsuba.cpp` | $`O(n^{1.585})`$ | $`2^{32}`$ |
+| [DFT](#dft) | `matmul_dft.cpp` | $`O(n^2)`$[^1] | $`2^8`$ |
+| [FFT](#fft) | `matmul_fft.cpp` | $`O(n\log n)`$[^1] | $`2^8`$ |
+| [Binet formula](#binet-formula) | `field_ext.cpp` | $`O(n\log n)`$[^1] | $`2^8`$ |
 
 [^1]: These algorithms eventually fail (due to exceeding floating-point precision) when `n` is sufficiently large (e.g., fails when `n >= 0x7f'ffff`).
 
 
 ## Naive
 
-The "naïve" implementation is just the simple (non-memoised) recursive algorithm, and can be found in `impl/naive.cpp`.
+The "naïve" implementation is just the simple (non-memoised) recursive algorithm.
 
 ## Linear
 
