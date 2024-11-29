@@ -2,9 +2,11 @@
 bin/*
 data/*
 obj/*
+asm/*
 
 # generated files
 *.o
+*.s
 *.out
 *.exe
 *.dat
